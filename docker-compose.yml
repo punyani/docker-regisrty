@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  docker-registry:
+    image: registry:2
+    container_name: docker-registry
+    restart: always
+    ports:
+      - "443:443"
+    volumes:
+      - ./volume:/var/lib/registry
+      - ./certificate:/certs
+    environment:
+      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/merged-bundle.crt
+      REGISTRY_HTTP_TLS_KEY: /certs/private.key
+      REGISTRY_HTTP_ADDR: 0.0.0.0:443
