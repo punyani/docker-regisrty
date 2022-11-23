@@ -14,3 +14,6 @@ services:
       REGISTRY_HTTP_TLS_CERTIFICATE: /certs/merged-bundle.crt
       REGISTRY_HTTP_TLS_KEY: /certs/private.key
       REGISTRY_HTTP_ADDR: 0.0.0.0:443
+      REGISTRY_AUTH: htpasswd
+      REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
+      REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
