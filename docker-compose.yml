@@ -10,6 +10,7 @@ services:
     volumes:
       - ./volume:/var/lib/registry
       - ./certificate:/certs
+      - ./auth:/auth
     environment:
       REGISTRY_HTTP_TLS_CERTIFICATE: /certs/merged-bundle.crt
       REGISTRY_HTTP_TLS_KEY: /certs/private.key
